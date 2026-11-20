@@ -17,6 +17,10 @@ app.use(express.urlencoded({extended: true}));
 app.use("/workouts", workoutRoutes);
 app.use("/users", userRoutes);
 
+app.use(cors({
+  origin: ['http://localhost:5173'], 
+  credentials: true
+}));
 
 if(require.main === module){
 	app.listen(port, () => {
